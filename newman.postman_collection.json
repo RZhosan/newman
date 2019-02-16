@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "26962390-b9d9-4d82-9c60-f7b73e78bfe3",
+		"name": "Newman-collection",
+		"description": "A collectin to test Newman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth: Digest",
+			"item": [
+				{
+					"name": "DigestAuth Success",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"response code is 200\"] = responseCode.code === 200;",
+									"tests[\"body contains authenticated\"] = responseBody.has(\"authenticated\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "digest",
+							"digest": [
+								{
+									"key": "algorithm",
+									"value": "MD5",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "postman",
+									"type": "string"
+								},
+								{
+									"key": "realm",
+									"value": "{{echo_digest_realm}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "nonce",
+									"value": "{{echo_digest_nonce}}",
+									"type": "string"
+								},
+								{
+									"key": "nonceCount",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "clientNonce",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "opaque",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "qop",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "disableRetryRequest",
+									"type": "any"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Digest username=\"postman\", realm=\"Users\", nonce=\"ni1LiL0O37PRRhofWdCLmwFsnEtH1lew\", uri=\"/digest-auth\", response=\"254679099562cf07df9b6f5d8d15db44\", opaque=\"\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://echo.getpostman.com/digest-auth",
+							"protocol": "https",
+							"host": [
+								"echo",
+								"getpostman",
+								"com"
+							],
+							"path": [
+								"digest-auth"
+							]
+						},
+						"description": "This endpoint sends a hashed Digest Authorization header to gain access to a valid `200 Ok` response code. In Postman, it uses the stored [global variables](https://www.getpostman.com/docs/environments#gloval-variables?source=echo-collection-app-onboarding), `echo_digest_realm` and `echo_digest_nonce`, to generate the hashed authorisation header.\n\nWithin Postman, for this request to successfully authenticate, running the previous request \"DigestAuth Request\" stores the relevant information within the global variables."
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"auth": {
+									"type": "digest",
+									"digest": [
+										{
+											"key": "algorithm",
+											"value": "MD5",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "postman",
+											"type": "string"
+										},
+										{
+											"key": "realm",
+											"value": "{{echo_digest_realm}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "string"
+										},
+										{
+											"key": "nonce",
+											"value": "{{echo_digest_nonce}}",
+											"type": "string"
+										},
+										{
+											"key": "nonceCount",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "clientNonce",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "opaque",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "qop",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "disableRetryRequest",
+											"type": "any"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Digest username=\"postman\", realm=\"Users\", nonce=\"ni1LiL0O37PRRhofWdCLmwFsnEtH1lew\", uri=\"/digest-auth\", response=\"254679099562cf07df9b6f5d8d15db44\", opaque=\"\""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://echo.getpostman.com/digest-auth",
+									"protocol": "https",
+									"host": [
+										"echo",
+										"getpostman",
+										"com"
+									],
+									"path": [
+										"digest-auth"
+									]
+								},
+								"description": "This endpoint sends a hashed Digest Authorization header to gain access to a valid `200 Ok` response code. In Postman, it uses the stored [global variables](https://www.getpostman.com/docs/environments#gloval-variables?source=echo-collection-app-onboarding), `echo_digest_realm` and `echo_digest_nonce`, to generate the hashed authorisation header.\n\nWithin Postman, for this request to successfully authenticate, running the previous request \"DigestAuth Request\" stores the relevant information within the global variables."
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "",
+									"name": "Access-Control-Allow-Credentials",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "",
+									"name": "Access-Control-Allow-Headers",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "",
+									"name": "Access-Control-Allow-Methods",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "",
+									"name": "Access-Control-Allow-Origin",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Content-Length",
+									"value": "42",
+									"name": "Content-Length",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Oct 2015 06:17:51 GMT",
+									"name": "Date",
+									"description": ""
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.6.2",
+									"name": "Server",
+									"description": ""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding",
+									"name": "Vary",
+									"description": ""
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Sails <sailsjs.org>",
+									"name": "X-Powered-By",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\"authenticated\":true}"
+						}
+					]
+				}
+			],
+			"description": "Digest authentication protects an endpoint with a username and password without actually transmitting the password over network.\nOne has to apply a hash function (like MD5, etc) to the username and password before sending them over the network.\n\n> Username: `postman`\n>\n> Password: `password`\n\nUnlike Basic-Auth, authentication happens using two consecutive requests where the first request returns `401 Unauthorised` along with `WWW-Authenticate` header containing information that needs to be used to authenticate subsequent calls.\n\nTo know more about digest authentication, refer to the [Digest Access Authentication](https://en.wikipedia.org/wiki/Digest_access_authentication) wikipedia article.\nThe article on [authentication helpers](https://www.getpostman.com/docs/helpers#digest-auth) elaborates how to use the same within the Postman app."
+		}
+	]
+}

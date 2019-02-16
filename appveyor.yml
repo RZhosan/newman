@@ -1,0 +1,25 @@
+# AppVeyor Config
+# http://www.appveyor.com/docs/lang/nodejs-iojs
+
+# Don't run MSBuild
+build: off
+
+# Don't build tags
+skip_tags: true
+
+environment:
+  nodejs_version: "10"
+
+install:
+  # Install Node
+  - ps: Install-Product node $env:nodejs_version
+  - node --version
+  - npm --version
+  - yarn --version
+
+  # Install dependencies
+  - yarn
+
+test_script:
+  # Postman
+  - yarn test

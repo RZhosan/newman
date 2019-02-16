@@ -1,0 +1,14 @@
+{
+  "name": "newman",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/RZhosan/newman.git",
+  "author": "Rostislav Zhosan <r.zhosan@itransition.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "newman run ./newman.postman_collection.json -e ./newman.postman_environment.json"
+  },
+  "devDependencies": {
+    "newman": "^4.3.1"
+  }
+}
