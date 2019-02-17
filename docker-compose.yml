@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  jenkins:
+    image: jenkinsci/blueocean
+    user: root
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 8090:8080
+      - 50000:50000
+    networks:
+      - jenkins
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
+    networks:
+      - jenkins
+
+networks:
+  jenkins:
+    driver: bridge
