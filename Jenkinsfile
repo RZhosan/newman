@@ -18,10 +18,10 @@ pipeline {
     }
     post {
         success {
-            slackSend color: 'good', message: 'All tests passed in Jenkis'
+            slackSend color: 'good', message: '<${env.BUILD_URL}|All tests passed in Jenkis>'
         }
         failure {
-            slackSend color: 'bad', message: 'Some of the tests failed in Jenkins'
+            slackSend color: 'bad', message: '<${env.BUILD_URL}|Some of the tests failed in Jenkins>'
         }
     }
 }
