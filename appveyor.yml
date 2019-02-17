@@ -23,3 +23,10 @@ install:
 test_script:
   # Postman
   - yarn test
+
+notifications:
+  - provider: Slack
+    incoming_webhook: https://hooks.slack.com/services/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
+    on_build_success: true
+    on_build_failure: true
+    on_build_status_changed: true
