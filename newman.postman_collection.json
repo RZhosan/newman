@@ -63,7 +63,7 @@
 							"script": {
 								"id": "da928aed-f702-468a-a7ad-b6bda474074a",
 								"exec": [
-									"tests[\"response code is 200\"] = responseCode.code === 200;",
+									"tests[\"response code is 200\"] = responseCode.code === 201;",
 									"tests[\"body contains authenticated\"] = responseBody.has(\"authenticated\");"
 								],
 								"type": "text/javascript"
