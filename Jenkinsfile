@@ -16,4 +16,12 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            slackSend color: 'good', message: 'All tests passed in Jenkis'
+        }
+        failure {
+            slackSend color: 'bad', message: 'Some of the tests failed in Jenkins'
+        }
+    }
 }
