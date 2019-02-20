@@ -27,7 +27,7 @@ test_script:
 notifications:
   - provider: Slack
     incoming_webhook: https://hooks.slack.com/services/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
-    template: "<{{buildUrl}}|Automated Postman Tests. {{projectName}} {{buildVersion}} {{status}}>\r\n
+    template: "<{{buildUrl}}|Automated Postman Tests - {{configuration}}. {{projectName}} {{buildVersion}} {{status}}>\r\n
       Commit <{{commitUrl}}|{{commitId}}> by {{commitAuthor}} on {{commitDate}}: _{{commitMessage}}_"
     on_build_success: true
     on_build_failure: true
